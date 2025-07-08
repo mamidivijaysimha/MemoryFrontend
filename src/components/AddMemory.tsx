@@ -46,7 +46,7 @@ const AddMemory: React.FC = () => {
     formData.append('postedBy', localStorage.getItem('username') || 'unknown');
 
     try {
-      const res = await fetch('https://memory-production-46bc.up.railway.app/api/memories', {
+      const res = await fetch('https://graceful-inspiration-production.up.railway.app/api/memories', {
         method: 'POST',
         body: formData,
       });
