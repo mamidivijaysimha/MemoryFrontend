@@ -15,7 +15,7 @@ const AuthPage: React.FC = () => {
     setSuccess('');
 
     try {
-      const res = await fetch('https://memory-production-46bc.up.railway.app/api/auth/login', {
+      const res = await fetch('https://graceful-inspiration-production.up.railway.app/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
@@ -45,7 +45,7 @@ const AuthPage: React.FC = () => {
     }
 
     try {
-      const res = await fetch('https://memory-production-46bc.up.railway.app/api/auth/register', {
+      const res = await fetch('https://graceful-inspiration-production.up.railway.app/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
