@@ -7,7 +7,7 @@ const EditMemory: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:8081/api/memories`)
+    fetch(`https://memory.railway.internal/api/memories`)
       .then(res => res.json())
       .then(data => {
         const memory = data.find((m: any) => m.id === id);
@@ -27,7 +27,7 @@ const EditMemory: React.FC = () => {
   const handleUpdate = async () => {
     if (!description.trim()) return alert('Description cannot be empty');
 
-    const res = await fetch(`http://localhost:8081/api/memories/${id}`, {
+    const res = await fetch(`https://memory.railway.internal/api/memories/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
