@@ -25,7 +25,7 @@ const Profile: React.FC = () => {
     }
     setUser(storedUsername);
 
-    fetch('http://localhost:8081/api/memories')
+    fetch('https://memory.railway.internal/api/memories')
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data)) {
@@ -39,7 +39,7 @@ const Profile: React.FC = () => {
     const confirm = window.confirm('Are you sure you want to delete this memory?');
     if (!confirm) return;
 
-    await fetch(`http://localhost:8081/api/memories/${id}`, { method: 'DELETE' });
+    await fetch(`https://memory.railway.internal/api/memories/${id}`, { method: 'DELETE' });
     setMemories(prev => prev.filter(m => m.id !== id));
   };
 
