@@ -35,7 +35,7 @@ const Home: React.FC = () => {
   }, [navigate]);
 
 useEffect(() => {
-  fetch('https://memory-production-46bc.up.railway.app/api/memories')
+  fetch('https://graceful-inspiration-production.up.railway.app/api/memories')
     .then(res => res.json())
     .then(data => {
       if (Array.isArray(data)) {
@@ -55,7 +55,7 @@ useEffect(() => {
   const handleLike = async (id: string) => {
     if (!user) return;
 
-    const res = await fetch(`https://memory-production-46bc.up.railway.app/api/memories/${id}/like?username=${user.username}`, {
+    const res = await fetch(`https://graceful-inspiration-production.up.railway.app/api/memories/${id}/like?username=${user.username}`, {
       method: 'POST'
     });
 
@@ -76,7 +76,7 @@ useEffect(() => {
     const comment = commentInputs[id];
     if (!comment?.trim() || !user) return;
 
-    const res = await fetch(`https://memory-production-46bc.up.railway.app/api/memories/${id}/comments`, {
+    const res = await fetch(`https://graceful-inspiration-production.up.railway.app/api/memories/${id}/comments`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ comment, username: user.username })
