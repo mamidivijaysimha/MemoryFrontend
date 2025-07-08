@@ -35,7 +35,7 @@ const Home: React.FC = () => {
   }, [navigate]);
 
 useEffect(() => {
-  fetch('http://localhost:8081/api/memories')
+  fetch('https://memory.railway.internal/api/memories')
     .then(res => res.json())
     .then(data => {
       if (Array.isArray(data)) {
@@ -55,7 +55,7 @@ useEffect(() => {
   const handleLike = async (id: string) => {
     if (!user) return;
 
-    const res = await fetch(`http://localhost:8081/api/memories/${id}/like?username=${user.username}`, {
+    const res = await fetch(`https://memory.railway.internal/api/memories/${id}/like?username=${user.username}`, {
       method: 'POST'
     });
 
@@ -76,7 +76,7 @@ useEffect(() => {
     const comment = commentInputs[id];
     if (!comment?.trim() || !user) return;
 
-    const res = await fetch(`http://localhost:8081/api/memories/${id}/comments`, {
+    const res = await fetch(`https://memory.railway.internal/api/memories/${id}/comments`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ comment, username: user.username })
