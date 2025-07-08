@@ -17,7 +17,7 @@ const Settings: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const response = await fetch('https://memory.railway.internal/api/auth/update', {
+    const response = await fetch('https://memory-production-46bc.up.railway.app/api/auth/update', {
       // ✅ Fixed: changed '/api/users/update' to '/api/auth/update'
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
