@@ -46,7 +46,7 @@ const AddMemory: React.FC = () => {
     formData.append('postedBy', localStorage.getItem('username') || 'unknown');
 
     try {
-      const res = await fetch('http://localhost:8081/api/memories', {
+      const res = await fetch('https://memory.railway.internal/api/memories', {
         method: 'POST',
         body: formData,
       });
